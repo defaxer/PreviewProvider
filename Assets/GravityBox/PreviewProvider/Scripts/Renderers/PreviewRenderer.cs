@@ -1,12 +1,17 @@
-﻿using GravityBox;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GravityBox.PreviewProvider
 {
+    /// <summary>
+    /// Base class for all Renderers responsible for creating preview object and 
+    /// positioning it on a Preview scene. Can have per Renderer configured settings,
+    /// like camera rotation or texture format
+    /// </summary>
     public abstract class PreviewRenderer : ScriptableObject
     {
+        /// <summary>
+        /// positioning camera around rendered object with vertical horizontal rotation and distance from object
+        /// </summary>
         [System.Serializable]
         public class Orientation 
         {
@@ -14,13 +19,27 @@ namespace GravityBox.PreviewProvider
             public float distance;
         }
 
+        /// <summary>
+        /// default icon in case something failed to render object
+        /// </summary>
         public Texture2D defaultAssetIcon;
-        public bool overrideCameraPosition;
+        
+        /// <summary>
+        /// texture format for resulting image, if transparency needed use RGBA32 or ARGB32
+        /// </summary>
         public TextureFormat textureFormat = TextureFormat.RGB24;
+        public bool overrideCameraPosition;
 
         [SerializeField]
         private Orientation cameraPosition;
         
+        /// <summary>
+        /// creating resulting preview texture for given object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="previewScene">scene containing preview object</param>
+        /// <param name="previewSize">size of resulting texture</param>
+        /// <returns></returns>
         public virtual Texture2D Render(object obj, PreviewScene previewScene, int previewSize)
         {
             if (overrideCameraPosition)
@@ -50,10 +69,27 @@ namespace GravityBox.PreviewProvider
             return image;
         }
 
+        /// <summary>
+        /// Create preview object by code or from prefab here
+        /// layer of camera's culling mask 
+        /// as in most cases camera should use layer invisible to other game cameras
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="layer"></param>
         protected virtual void SetupPreviewObject(object obj, int layer) { }
 
+        /// <summary>
+        /// make cleanup code here, like hiding or removing preview object from scene
+        /// </summary>
         protected virtual void OnRenderingDone() { }
 
+        /// <summary>
+        /// used to position preview game object just before camera
+        /// Note: camera is concidered static here, in case closeup render needed move camera
+        /// with position override, will affect all objects of same type
+        /// </summary>
+        /// <param name="gameObject"></param>
+        /// <param name="previewLayer"></param>
         protected static void AlignPreviewObject(GameObject gameObject, int previewLayer)
         {
             Bounds bounds = new Bounds();

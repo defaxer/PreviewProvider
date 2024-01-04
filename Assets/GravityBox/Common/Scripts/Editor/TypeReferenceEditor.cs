@@ -8,6 +8,11 @@ using UnityEditor.IMGUI.Controls;
 
 namespace GravityBox
 {
+    /// <summary>
+    /// Custom drawer for Type reference to assign types with ease.
+    /// Has pretty Dropdown with Types selection similar to Add Component dropdown
+    /// Can load all types but very slow, so add more < temp.UnionWith(Assembly.GetAssembly(typeof(int)).GetTypes()); > in case your type is missing
+    /// </summary>
     [CustomPropertyDrawer(typeof(TypeReference))]
     public class TypeReferenceEditor : PropertyDrawer
     {
@@ -45,6 +50,10 @@ namespace GravityBox
         }
     }
 
+    /// <summary>
+    /// Dropdown with types grouped by namespases and a search bar
+    /// similar to Add Component... dropdown
+    /// </summary>
     class TypesDropdown : AdvancedDropdown
     {
         public event System.Action<System.Type> onTypeSelected;
@@ -71,7 +80,6 @@ namespace GravityBox
             temp.UnionWith(Assembly.GetAssembly(typeof(Animation)).GetTypes());
             temp.UnionWith(Assembly.GetAssembly(typeof(TypeReference)).GetTypes());
 
-            List<string> _names = new List<string>();
             foreach (var t in temp)
             {
                 if (IsValidType(t))

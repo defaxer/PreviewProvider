@@ -3,9 +3,9 @@
 namespace GravityBox
 {
     /// <summary>
-    /// Class to use in Unity inspector if you need assign class variable.
+    /// Class to use in Unity inspector if you need assign class (or type) variable.
     /// Works better with custom drawer. Assembly and fullname variables 
-    /// are for human readability purposes.
+    /// are for human readability purposes only and are not used.
     /// </summary>
     [System.Serializable]
     public class TypeReference

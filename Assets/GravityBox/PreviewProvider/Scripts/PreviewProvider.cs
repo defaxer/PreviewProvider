@@ -5,8 +5,14 @@ using UnityEngine;
 
 namespace GravityBox.PreviewProvider
 {
+	/// <summary>
+	/// Base Implementation of main rendering manager that manages all processes involved
+	/// </summary>
 	public class PreviewProvider : ScriptableObject, IPreviewProvider
 	{
+		/// <summary>
+		/// type of objects to render and a renderer handling this
+		/// </summary>
 		[System.Serializable]
 		public class TypeRenderer
 		{
@@ -22,20 +28,31 @@ namespace GravityBox.PreviewProvider
 
 		public int previewSize = 64;
 		public TypeRenderer[] renderers;
-
+		
+		/// <summary>
+		/// Rendering Scene prefab with lights and camera
+		/// </summary>
 		public GameObject previewScenePrefab;
 
+		/// <summary>
+		/// default asset icon before rendering done
+		/// </summary>
 		[SerializeField]
 		private Texture2D defaultAssetIcon;
 
+		/// <summary>
+		/// supply render texture here through Inspector or it will fallback to default
+		/// </summary>
 		[SerializeField]
 		private RenderTexture _renderTexture;
 
 		private Dictionary<int, Texture2D> previewsCache = new Dictionary<int, Texture2D>();
 		private Queue<ObjectInfo> _objects = new Queue<ObjectInfo>();
 
+		//working rendering scene
 		private PreviewScene previewScene;
 
+		//multithreading lock
 		private object _lockObject = new object();
 		private bool _isRendering;
 
@@ -61,6 +78,8 @@ namespace GravityBox.PreviewProvider
 			_isRendering = false;
         }
 
+		//remove resources generated at runtime
+		//when not needed
         private void Cleanup()
 		{
 			foreach (var preview in previewsCache)
@@ -85,6 +104,9 @@ namespace GravityBox.PreviewProvider
 			}
 		}
 
+		/// <summary>
+		/// Async rendering of all objects currently in a list
+		/// </summary>
 		private async void StartRenderingAsync()
 		{
 			lock (_lockObject)

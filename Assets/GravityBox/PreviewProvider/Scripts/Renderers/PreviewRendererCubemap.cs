@@ -2,6 +2,9 @@
 
 namespace GravityBox.PreviewProvider
 {
+    /// <summary>
+    /// Renderer for cubemap textures, uses special unlit shader for that
+    /// </summary>
     public class PreviewRendererCubemap : PreviewRenderer
     {
         public GameObject previewPrefab;

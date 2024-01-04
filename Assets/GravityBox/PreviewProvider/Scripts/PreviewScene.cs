@@ -4,18 +4,28 @@ using UnityEngine;
 
 namespace GravityBox.PreviewProvider
 {
+	/// <summary>
+	/// Script to manage state of Scene for preview rendering
+	/// camera position, light management, layers and culling masks
+	/// </summary>
 	public class PreviewScene : MonoBehaviour
 	{
 		public event System.Action OnSceneDestroy;
 
 		public Vector3 cameraAngles = new Vector3(35, -150, 0);
 		public float cameraDistance = 4.7f;
+
+		//if layer must have some specific value that is not set in layer manager
+		//or unity reserved number like 6,7 etc, set it with layer override
 		public int layerOverride = -1;
 
+		//camera is serialized here to be able to tune position in editor see OnValidate method
 		[SerializeField]
 		private Camera _camera;
 		private Light[] _lights;
 
+		//whole other lights currently on a scene are getting updated with culling mask
+		//to avoid them affecting rendering scene too much
 		private List<Light> disabled;
 
 		private Vector3 cameraDefaultPosition;
@@ -83,6 +93,7 @@ namespace GravityBox.PreviewProvider
 			_camera.transform.localRotation = cameraDefaultRotation;
 		}
 
+		//render preview scene only with lights from this scene
 		public void DisableSceneLights()
 		{
 			disabled = new List<Light>();

@@ -2,6 +2,10 @@
 
 namespace GravityBox.PreviewProvider
 {
+    /// <summary>
+    /// Renderer for materials, in theory can use different shapes (box, sphere, donut) for rendering
+    /// but that will require preview cache fixing
+    /// </summary>
     public class PreviewRendererMaterial : PreviewRenderer
     {
         public GameObject previewPrefab;

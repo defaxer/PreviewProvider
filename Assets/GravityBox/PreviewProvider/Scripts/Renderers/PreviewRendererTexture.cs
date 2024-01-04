@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace GravityBox.PreviewProvider
 {
+    /// <summary>
+    /// Textures renderer. Implemented as example 
+    /// but also good for rendering normal maps, 
+    /// as Unity shuffles channels for those so they look 'unusual'
+    /// </summary>
     public class PreviewRendererTexture : PreviewRenderer
     {
         public GameObject previewPrefab;
