@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f432321dfefd7a04a9491722da0d0c06, type: 3}
+  m_Name: Textures
+  m_EditorClassIdentifier: 
+  defaultAssetIcon: {fileID: 2800000, guid: 51eef61c10a0ab94eb3a5ec14cfdbcfd, type: 3}
+  overrideCameraPosition: 1
+  textureFormat: 3
+  cameraPosition:
+    rotation: {x: 0, y: 0, z: 0}
+    distance: 4
+  previewPrefab: {fileID: 4575849510539052188, guid: a3f427534f5d3c242927720e8606fd1a,
+    type: 3}
+  normalMapSuffix: _norm

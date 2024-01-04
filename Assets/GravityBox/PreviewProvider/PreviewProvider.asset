@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176170df0f48ed5458541803b8788968, type: 3}
+  m_Name: PreviewProvider
+  m_EditorClassIdentifier: 
+  previewSize: 128
+  renderers:
+  - typeReference:
+      Assembly: UnityEngine.CoreModule
+      Fullname: UnityEngine.Texture2D
+      assemblyQualifiedName: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    previewRenderer: {fileID: 11400000, guid: 489de8b7159dcdb44a1175ceccf146b6, type: 2}
+  - typeReference:
+      Assembly: UnityEngine.CoreModule
+      Fullname: UnityEngine.GameObject
+      assemblyQualifiedName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    previewRenderer: {fileID: 11400000, guid: bc214b07a1b288943963ac8db824199b, type: 2}
+  - typeReference:
+      Assembly: UnityEngine.CoreModule
+      Fullname: UnityEngine.Material
+      assemblyQualifiedName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    previewRenderer: {fileID: 11400000, guid: 4c797c0a208ea7b4ba0b1c76956be101, type: 2}
+  - typeReference:
+      Assembly: UnityEngine.CoreModule
+      Fullname: UnityEngine.Cubemap
+      assemblyQualifiedName: UnityEngine.Cubemap, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    previewRenderer: {fileID: 11400000, guid: 994640cf4d1fe4a4baa0e2afc5bb401a, type: 2}
+  previewScenePrefab: {fileID: 1839546293861994, guid: ed993aca0eed451449ed592f505b230b,
+    type: 3}
+  defaultAssetIcon: {fileID: 2800000, guid: c85cbe91a8fcd5a40ab120b66ff377ae, type: 3}
+  _renderTexture: {fileID: 8400000, guid: 9e2bf066666863245b3b09b14364969d, type: 2}

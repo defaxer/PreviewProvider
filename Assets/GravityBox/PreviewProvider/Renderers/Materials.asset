@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db802488a3c66574c805e57c641fb57f, type: 3}
+  m_Name: Materials
+  m_EditorClassIdentifier: 
+  defaultAssetIcon: {fileID: 2800000, guid: 3367674aaa926f441b630064cf9cb437, type: 3}
+  overrideCameraPosition: 1
+  textureFormat: 5
+  cameraPosition:
+    rotation: {x: 30, y: -150, z: 0}
+    distance: 4.9
+  previewPrefab: {fileID: 4575849510539052188, guid: 9f015d6c7059db14d93813bc72531f55,
+    type: 3}

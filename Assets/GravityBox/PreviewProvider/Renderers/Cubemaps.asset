@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fd8aae5a004e04a8b2559c1312c282, type: 3}
+  m_Name: Cubemaps
+  m_EditorClassIdentifier: 
+  defaultAssetIcon: {fileID: 2800000, guid: b13a9334792863046b9e95dd423fc857, type: 3}
+  overrideCameraPosition: 0
+  textureFormat: 3
+  cameraPosition:
+    rotation: {x: 0, y: 0, z: 0}
+    distance: 0
+  previewPrefab: {fileID: 7002456654519397367, guid: d99c670a64abb6b409329862b8178547,
+    type: 3}
